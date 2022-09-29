@@ -1,0 +1,70 @@
+﻿@model Form.API.Data.Entities.UnicForm
+
+<flash dismissable="true" bootstrap-version="4" />
+
+<head>
+    <style>
+        h2 {
+            text-align: center;
+        }
+
+        p {
+            text-align: center;
+        }
+
+        div {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<img src="~/images/imagen.jpeg" style="height:350;width:300px" />
+<h2 style="font-size:30px">
+    <strong>Si quieres postularte como Delegado de Fedehaceb, por favor regístrate para el Curso Virtual en Economía Solidaria, diligenciando los siguientes datos:</strong>
+</h2>
+
+
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="Add">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <br />
+            <div class="form-group">
+                <label asp-for="DocumentNumber" class="control-label" style="font-weight:bold;">Nro. Documento</label>
+                <input asp-for="DocumentNumber" class="form-control smfont" />
+                <span asp-validation-for="DocumentNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label" style="font-weight:bold;">Nombre</label>
+                <input asp-for="Name" class="form-control smfont" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label" style="font-weight:bold;">Apellidos</label>
+                <input asp-for="LastName" class="form-control smfont" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+                <div class="form-group">
+                    <label asp-for="Email" class="control-label" style="font-weight:bold;">Email</label>
+                    <input asp-for="Email" type="email" class="form-control smfont" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>  
+            <div class="form-group">
+                <label class="control-label" style="font-weight:bold;">Celular</label>
+                <input asp-for="CellPhone" class="form-control smfont" />
+                <span asp-validation-for="CellPhone" class="text-danger"></span>
+            </div>
+        <div class="modal-footer">
+                <button type="button" class="btn btn-sm btn-info" onclick="window.location='https://fedehaceb.com.co/';"><i class="fal fa-ban"></i> Salir</button>
+            <button type="submit" class="btn btn-sm btn-warning"><i class="fal fa-save"></i> Guardar</button>
+        </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+    <script type="text/javascript">
+    </script>
+}

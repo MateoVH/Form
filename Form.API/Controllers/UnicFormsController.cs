@@ -40,7 +40,13 @@ namespace Form.API.Controllers
             {
                 _flashMessage.Danger("Ya está registrado ese número de documento");
             }
-            return RedirectToAction("Add", "UnicForms");
-        }       
+            return RedirectToAction("Thanks", "UnicForms");
+        }
+
+        public IActionResult Thanks()
+        {
+            return View();
+        }
+
     }
 }
